@@ -2,12 +2,17 @@ const breedInput = document.getElementById('dog-breed');
 const submitBtn = document.getElementById('submit-btn');
 const dogImg = document.getElementsByClassName('dog-img');
 const breedsUl = document.getElementById('breeds-ul');
+const errorSection = document.getElementById('error-msg');
+
+const fetchErrorMsg = () => {
+  errorSection.classList.toggle('hidden');
+}
 
 const getDogBreeds = async function() {
   try {  
     const req = await fetch(
       `https://dog.ceo/api/breeds/list/all`
-    );
+    );    
     
     const data = await req.json();
 
@@ -18,7 +23,7 @@ const getDogBreeds = async function() {
     });
     
   } catch (err) {
-    console.log(err);
+    console.log(err);    
     throw err;
   }
 }
@@ -28,6 +33,9 @@ const getDogPic = async (dogBreed) => {
     const req = await fetch(
       `https://dog.ceo/api/breed/${dogBreed}/images/random`
     );
+
+    if (req.status === 404) throw new Error('Error');
+    errorSection.classList = "hidden"; 
     
     const data = await req.json();
     console.log(data);
@@ -36,6 +44,7 @@ const getDogPic = async (dogBreed) => {
     return data.message;
   } catch (err) {
     console.log(err);
+    fetchErrorMsg();
     throw err;
   }
 }
