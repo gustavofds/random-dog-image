@@ -57,8 +57,8 @@ const renderDogImg = function(src) {
 
 const submitClick = async function(e) {
   e.preventDefault();
-  console.log(breedInput.value);
-  const src = await getDogPic(breedInput.value);
+  const dogBreed = breedInput.value.trim().toLowerCase();
+  const src = await getDogPic(dogBreed);
   renderDogImg(src);
   breedInput.value = "";
 }
