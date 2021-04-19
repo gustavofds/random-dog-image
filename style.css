@@ -1,0 +1,39 @@
+body {
+  background-color: #90e0ef;
+  height: 100%;
+}
+
+.navbar {
+  background-color: #03045e;
+  padding: 20px;
+  /* width: 100%; */
+}
+
+.navbar > h1 {
+  color: white;
+}
+
+main {
+  padding: 20px 0 20px 20px;
+}
+
+form {
+  padding-bottom: 20px;
+}
+
+.dog-img {
+  max-width: 400px;
+  max-height: 400px;
+}
+
+.hidden {
+  display:none;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+ul > li {  
+  list-style-type: circle;
+}

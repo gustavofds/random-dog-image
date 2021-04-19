@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"
+    />
+  <link rel="stylesheet" href="style.css">
+  <title>Generate your random dog image!</title>
+</head>
+<body>
+ 
+  <section class="">
+    <header class="navbar">
+      <h1 class="title">Choose your favorite dog breed</h1>
+    </header>
+    <main>
+      <form action="">
+        <div class="field">
+          <label class="label" for="dog-breed">Dog Breed</label>
+          <div class="control">
+            <input
+              type="text"
+              name="dog-breed"
+              maxlength="40"
+              id="dog-breed"
+              required
+            />
+          </div>
+        </div>
+        <div class="field is-grouped">
+          <div class="control">
+            <button
+              class="button is-primary"
+              type="submit"
+              id="submit-btn"
+            >
+              Submit!
+            </button>            
+          </div>
+        </div>
+      </form>
+      <section class="hidden" id="img-section">
+        <h2 class="subtitle">Here is your dog image!</h2>
+        <img class="dog-img"  src="" alt="random dog image">
+      </section>
+      <section>
+        <h2>List with all dog breeds we support</h2>
+        <ul id="breeds-ul"></ul>
+      </section>
+    </main>
+  </section>  
+  
+  <script src="script.js"></script>
+</body>
+</html>
